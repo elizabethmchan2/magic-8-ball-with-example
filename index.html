@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+    <script src = "aframe-draw-component.js"></script>
+    <script src = "aframe-textwrap-component.js"></script>
+  </head>
+  <body>
+    <a-scene>
+        <a-sphere id = "ball" position = "0 1.5 -10" radius = "5" color = "black">
+            <a-animation attribute="position"
+               dur="100"
+               begin = "click"
+               direction="alternate"
+               to="0 4 -10"
+               repeat="9">
+            </a-animation>
+            <a-animation attribute = "rotation"
+            dur = "900"
+            begin = "click"
+            to = "0 0 360">
+            </a-animation>
+        <a-sphere position = "0 0 4" material="color: black; transparent: true; opacity: 0.8" radius = "2">
+            <!--<a-entity id="box" geometry="primitive: box" position="0 2 0" draw="background: #D7E8FF" textwrap="textAlign: center; x: 128; y: 128; text: Hello world!"></a-entity>-->
+            <a-triangle id = "tri" color = "blue" position="0 0 1.5">
+                <a-plane width=".4" height=".5" id="text" color="blue" position="0 -0.18 0.05" ></a-plane>
+            </a-triangle>
+        </a-sphere>
+        </a-sphere>
+        <a-camera>
+            <a-cursor color = "red">
+            </a-cursor>
+        </a-camera>
+    </a-scene>
+    <script src = "script.js"></script>
+  </body>
+</html>
